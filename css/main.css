@@ -30,6 +30,14 @@ h2 {
 	border-bottom: 1px solid #31a9ee;
 }
 
+h3 {
+	color: #326693;
+	padding-left: 10px;
+	border-left: 10px solid #31a9ee;
+	border-bottom: 1px solid #31a9ee;
+	margin-left: 10px;
+}
+
 a {
 	text-decoration: none;
 	color: black;
@@ -37,6 +45,14 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+p {
+	margin-left: 10px;
+}
+
+p.h3{
+	margin-left: 20px;
 }
 
 .arow {
@@ -47,6 +63,30 @@ a:hover {
 	border-color: #31a9ee transparent transparent transparent;
 }
 
-.right-text{
+.right-text {
 	text-align: right;
+}
+
+.code-title {
+	color: #dddddd;
+	background-color: #386892;
+	border-radius: 5px;
+}
+
+.code-text {
+	color: #dddddd;
+	background-color: #1a3349;
+	margin-top: -3px;
+}
+.code-row{
+	color: #dddddd;
+	background-color: #1a3349;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+code {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
 }
