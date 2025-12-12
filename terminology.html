@@ -16,7 +16,7 @@
 
     <div class="body-div">
 
-        <h1>用語解説</h1><br><br>
+        <h1>用語解説</h1><br>
 
         <h2>リポジトリ</h2>
         <p>プロジェクトファイルや、更新履歴などGitで共有するすべての情報をまとめる倉庫。<br>
@@ -98,7 +98,7 @@
                 <td>
                     <p>統合したい内容が格納されているブランチを指定して実行</p>
                 </td>
-            </table>           
+            </table>
             <li>確認</li>
         </ol>
 
@@ -116,18 +116,30 @@
             これをすることにより、最新の状態から作業を始めることができます。そのため、作業を始める前にプルをしておくことが大事です。
             また、自身の作業が終わりリモートリポジトリにアップロードした際にもしておくとよいです。</p>
 
+        <h3>フェッチ</h3>
+        <p class="h3">プルを行う際、先に実行すると現時点のリモートリポジトリの状態を取得できる。<br>
+            内容を確認し競合がありそうなところを手動で直してからプルをすることで安全に情報を更新できる。</p>
+
         <div class="code-title">
             <code class="code-title">Gitコマンド</code>
         </div>
         <div class="code-text">
             <code class="code-row">1.|</code><code>$ git pull //リモートリポジトリの内容をローカルリポジトリに統合</code><br>
+            <code class="code-row">2.|</code><code>$ git fetch //リモートリポジトリの更新情報を取得</code><br>
         </div>
-        
+
         <br><br>
 
         <h2>プッシュ</h2>
         <p>プッシュはプルと逆でローカルリポジトリでの更新情報をリモートリポジトリに適用することができます。Git開発の中では一番リスクの高い処理のため慎重に行います。
         </p>
+
+         <div class="code-title">
+            <code class="code-title">Gitコマンド</code>
+        </div>
+        <div class="code-text">
+            <code class="code-row">1.|</code><code>$ git push //ローカルリポジトリの内容をリモートリポジトリに統合</code><br>
+        </div>
 
     </div>
 </body>
