@@ -16,6 +16,11 @@
 	margin-top: 100px;
 }
 
+hr{
+	margin-top: 100px;
+	margin-bottom: 250px;
+}
+
 
 h1 {
 	color: #326693;
@@ -33,7 +38,7 @@ h2 {
 h3 {
 	color: #326693;
 	padding-left: 10px;
-	border-bottom: 1px groove #31a9ee;
+	border-bottom: 1px solid #31a9ee;
 	margin-left: 10px;
 
 }
