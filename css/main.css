@@ -9,14 +9,27 @@
 	padding-inline: 15px;
 }
 
+body {
+	background-color: #e9f5ff;
+}
+
 .body-div {
 	background-color: white;
 	margin-right: 20%;
 	margin-left: 20%;
 	margin-top: 100px;
+	border-radius: 10px;
+
 }
 
-hr{
+.contents {
+	margin-top: 50px;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-bottom: 3%;
+}
+
+hr {
 	margin-top: 100px;
 	margin-bottom: 250px;
 }
@@ -56,7 +69,7 @@ p {
 	margin-left: 10px;
 }
 
-p.h3{
+p.h3 {
 	margin-left: 20px;
 }
 
@@ -83,7 +96,8 @@ p.h3{
 	background-color: #1a3349;
 	margin-top: -3px;
 }
-.code-row{
+
+.code-row {
 	color: #dddddd;
 	background-color: #1a3349;
 	border-radius: 5px;

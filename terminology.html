@@ -15,138 +15,141 @@
     </div>
 
     <div class="body-div">
+        <div class="contents">
 
-        <h1>用語解説</h1><br>
+            <br><h1>用語解説</h1><br>
 
-        <h2>リポジトリ</h2>
-        <p>プロジェクトファイルや、更新履歴などGitで共有するすべての情報をまとめる倉庫。<br>
-            開発時には、ネットワーク上にある基準となるリモートリポジトリと開発者自身のローカル環境に構築するローカルリポジトリがあり
-            開発者はローカルリポジトリを編集して開発を進めます。<br>
-            ローカルで作業した内容をリモートリポジトリ上にアップロードすることで他の開発者と編集済みの情報を共有することができる</p>
+            <h2>リポジトリ</h2>
+            <p>プロジェクトファイルや、更新履歴などGitで共有するすべての情報をまとめる倉庫。<br>
+                開発時には、ネットワーク上にある基準となるリモートリポジトリと開発者自身のローカル環境に構築するローカルリポジトリがあり
+                開発者はローカルリポジトリを編集して開発を進めます。<br>
+                ローカルで作業した内容をリモートリポジトリ上にアップロードすることで他の開発者と編集済みの情報を共有することができる</p>
 
-        <br><br>
+            <br><br>
 
-        <h2>クローン</h2>
-        <p>リモートリポジトリを自身のローカル環境にすべてコピーしローカル環境を構築することを指します。<br>
-            これをすることで、リモート上にある本体を触ることなく自身の環境で開発が進めることができチームでの並行作業を実現できます。</p>
+            <h2>クローン</h2>
+            <p>リモートリポジトリを自身のローカル環境にすべてコピーしローカル環境を構築することを指します。<br>
+                これをすることで、リモート上にある本体を触ることなく自身の環境で開発が進めることができチームでの並行作業を実現できます。</p>
 
-        <div class="code-title">
-            <code class="code-title">Gitコマンド</code>
+            <div class="code-title">
+                <code class="code-title">Gitコマンド</code>
+            </div>
+            <div class="code-text">
+                <code class="code-row">1.|</code><code>$ git clone &lt;URL&gt; //ローカルリポジトリを作成</code><br>
+            </div>
+
+            <br><br>
+
+            <h2>ブランチ</h2>
+            <p>作業をする際、ブランチを作成することで現時点の作業点から分岐し本体（メインブランチ）に影響を与えずにファイルの編集ができる。
+                そのため、ほかの人が同じファイルを編集しようとしても影響されることがなく、並行作業ができたり一時的なテストを行いたいときなどにも簡単に行えるため、作業を始める際は先にブランチを切ってからスタートするとよいです。
+            </p>
+
+            <h3>チェックアウト</h3>
+            <p class="h3">ブランチを移動するときに使うコマンド。ブランチを切ったタイミングでは移動しないので必ず行う。<br>
+                &lt;-b&gt; のオプションをつけることでブランチを作成して移動することもできる</p>
+
+            <div class="code-title">
+                <code class="code-title">Gitコマンド</code>
+            </div>
+            <div class="code-text">
+                <code class="code-row">1.|</code><code>$ git branch &lt;ブランチ名&gt; //ブランチの作成</code><br>
+                <code class="cpde-row">2.|</code><code>$ git checkout &lt;ブランチ名&gt; //ブランチの移動</code><br>
+                <code class="cpde-row">3.|</code><code>$ git checkout -b &lt;ブランチ名&gt; //ブランチの移動と作成</code><br>
+            </div>
+
+            <br><br>
+
+            <h2>コミット</h2>
+            <p>ブランチ内での作業を確定させ、編集履歴を残すことを指します。コミットをする際はどの部分を変更したかの編集差分の確認もでき、
+                自身で何をしたのかが簡単にわかるようになっています</p>
+
+            <h3>ワークツリー</h3>
+            <p class="h3">
+                編集している一時作業領域のこと。ここでチェックアウトをしてしまうと情報が消えてしまうため注意が必要。ほかのブランチの情報を知りたい場合はワークツリーコマンドを実行することで編集内容を失うことなく確認することができる
+            </p>
+
+            <h3>ステージ</h3>
+            <p class="h3">ファイルに変更を加えるとワークツリーからステージに移行する。ステージの状態に入ったファイルをコミットすることで編集を加えたファイルのみをコミットすることができる。</p>
+
+            <div class="code-title">
+                <code class="code-title">Gitコマンド</code>
+            </div>
+            <div class="code-text">
+                <code class="code-row">1.|</code><code>$ git commit &lt;コミット名&gt; //作業をコミットする</code><br>
+                <code class="code-row">1.|</code><code>$ git commit &lt;コミット名&gt; //作業をコミットする</code><br>
+            </div>
+
+            <br><br>
+
+            <h2>マージ</h2>
+            <p>マスターブランチと作成したブランチを統合し、編集履歴を反映させることをマージといいます。<br>
+                マージをする際、ほかのコミットと競合しうまく統合できない場合があるため、慎重に作業が必要です</p>
+
+            <h3>マージの手順</h3>
+
+            <ol>
+                <li>マージ先のブランチに移動</li>
+                <table>
+                    <td>
+                        <div class="arow"></div>
+                    </td>
+                    <td>
+                        <p>本体となるブランチに移動する。</p>
+                    </td>
+                </table>
+                <li>マージを実行</li>
+                <table>
+                    <td>
+                        <div class="arow"></div>
+                    </td>
+                    <td>
+                        <p>統合したい内容が格納されているブランチを指定して実行</p>
+                    </td>
+                </table>
+                <li>確認</li>
+            </ol>
+
+            <div class="code-title">
+                <code class="code-title">Gitコマンド</code>
+            </div>
+            <div class="code-text">
+                <code
+                    class="code-row">1.|</code><code>$ git marget &lt;マージ先のブランチ名&gt; //他のブランチの内容を現在のブランチに適用する</code><br>
+            </div>
+
+            <br><br>
+
+            <h2>プル</h2>
+            <p>プルはリモートリポジトリからすべての更新情報を自身のローカルリポジトリ環境に適用することを指します。<br>
+                これをすることにより、最新の状態から作業を始めることができます。そのため、作業を始める前にプルをしておくことが大事です。
+                また、自身の作業が終わりリモートリポジトリにアップロードした際にもしておくとよいです。</p>
+
+            <h3>フェッチ</h3>
+            <p class="h3">プルを行う際、先に実行すると現時点のリモートリポジトリの状態を取得できる。<br>
+                内容を確認し競合がありそうなところを手動で直してからプルをすることで安全に情報を更新できる。</p>
+
+            <div class="code-title">
+                <code class="code-title">Gitコマンド</code>
+            </div>
+            <div class="code-text">
+                <code class="code-row">1.|</code><code>$ git pull //リモートリポジトリの内容をローカルリポジトリに統合</code><br>
+                <code class="code-row">2.|</code><code>$ git fetch //リモートリポジトリの更新情報を取得</code><br>
+            </div>
+
+            <br><br>
+
+            <h2>プッシュ</h2>
+            <p>プッシュはプルと逆でローカルリポジトリでの更新情報をリモートリポジトリに適用することができます。Git開発の中では一番リスクの高い処理のため慎重に行います。
+            </p>
+
+            <div class="code-title">
+                <code class="code-title">Gitコマンド</code>
+            </div>
+            <div class="code-text">
+                <code class="code-row">1.|</code><code>$ git push //ローカルリポジトリの内容をリモートリポジトリに統合</code><br>
+            </div>
         </div>
-        <div class="code-text">
-            <code class="code-row">1.|</code><code>$ git clone &lt;URL&gt; //ローカルリポジトリを作成</code><br>
-        </div>
-
-        <br><br>
-
-
-
-        <h2>ブランチ</h2>
-        <p>作業をする際、ブランチを作成することで現時点の作業点から分岐し本体（メインブランチ）に影響を与えずにファイルの編集ができる。
-            そのため、ほかの人が同じファイルを編集しようとしても影響されることがなく、並行作業ができたり一時的なテストを行いたいときなどにも簡単に行えるため、作業を始める際は先にブランチを切ってからスタートするとよいです。
-        </p>
-
-        <h3>チェックアウト</h3>
-        <p class="h3">ブランチを移動するときに使うコマンド。ブランチを切ったタイミングでは移動しないので必ず行う。<br>
-            &lt;-b&gt; のオプションをつけることでブランチを作成して移動することもできる</p>
-
-        <div class="code-title">
-            <code class="code-title">Gitコマンド</code>
-        </div>
-        <div class="code-text">
-            <code class="code-row">1.|</code><code>$ git branch &lt;ブランチ名&gt; //ブランチの作成</code><br>
-            <code class="cpde-row">2.|</code><code>$ git checkout &lt;ブランチ名&gt; //ブランチの移動</code><br>
-            <code class="cpde-row">3.|</code><code>$ git checkout -b &lt;ブランチ名&gt; //ブランチの移動と作成</code><br>
-        </div>
-
-        <br><br>
-
-        <h2>コミット</h2>
-        <p>ブランチ内での作業を確定させ、編集履歴を残すことを指します。コミットをする際はどの部分を変更したかの編集差分の確認もでき、
-            自身で何をしたのかが簡単にわかるようになっています</p>
-
-        <h3>ワークツリー</h3>
-        <p class="h3">編集している一時作業領域のこと。ここでチェックアウトをしてしまうと情報が消えてしまうため注意が必要。ほかのブランチの情報を知りたい場合はワークツリーコマンドを実行することで編集内容を失うことなく確認することができる</p>
-
-        <h3>ステージ</h3>
-        <p class="h3">ファイルに変更を加えるとワークツリーからステージに移行する。ステージの状態に入ったファイルをコミットすることで編集を加えたファイルのみをコミットすることができる。</p>
-
-        <div class="code-title">
-            <code class="code-title">Gitコマンド</code>
-        </div>
-        <div class="code-text">
-            <code class="code-row">1.|</code><code>$ git commit &lt;コミット名&gt; //作業をコミットする</code><br>
-        </div>
-
-        <br><br>
-
-        <h2>マージ</h2>
-        <p>マスターブランチと作成したブランチを統合し、編集履歴を反映させることをマージといいます。<br>
-            マージをする際、ほかのコミットと競合しうまく統合できない場合があるため、慎重に作業が必要です</p>
-
-        <h3>マージの手順</h3>
-
-        <ol>
-            <li>マージ先のブランチに移動</li>
-            <table>
-                <td>
-                    <div class="arow"></div>
-                </td>
-                <td>
-                    <p>本体となるブランチに移動する。</p>
-                </td>
-            </table>
-            <li>マージを実行</li>
-            <table>
-                <td>
-                    <div class="arow"></div>
-                </td>
-                <td>
-                    <p>統合したい内容が格納されているブランチを指定して実行</p>
-                </td>
-            </table>
-            <li>確認</li>
-        </ol>
-
-        <div class="code-title">
-            <code class="code-title">Gitコマンド</code>
-        </div>
-        <div class="code-text">
-            <code class="code-row">1.|</code><code>$ git marget &lt;マージ先のブランチ名&gt; //他のブランチの内容を現在のブランチに適用する</code><br>
-        </div>
-
-        <br><br>
-
-        <h2>プル</h2>
-        <p>プルはリモートリポジトリからすべての更新情報を自身のローカルリポジトリ環境に適用することを指します。<br>
-            これをすることにより、最新の状態から作業を始めることができます。そのため、作業を始める前にプルをしておくことが大事です。
-            また、自身の作業が終わりリモートリポジトリにアップロードした際にもしておくとよいです。</p>
-
-        <h3>フェッチ</h3>
-        <p class="h3">プルを行う際、先に実行すると現時点のリモートリポジトリの状態を取得できる。<br>
-            内容を確認し競合がありそうなところを手動で直してからプルをすることで安全に情報を更新できる。</p>
-
-        <div class="code-title">
-            <code class="code-title">Gitコマンド</code>
-        </div>
-        <div class="code-text">
-            <code class="code-row">1.|</code><code>$ git pull //リモートリポジトリの内容をローカルリポジトリに統合</code><br>
-            <code class="code-row">2.|</code><code>$ git fetch //リモートリポジトリの更新情報を取得</code><br>
-        </div>
-
-        <br><br>
-
-        <h2>プッシュ</h2>
-        <p>プッシュはプルと逆でローカルリポジトリでの更新情報をリモートリポジトリに適用することができます。Git開発の中では一番リスクの高い処理のため慎重に行います。
-        </p>
-
-         <div class="code-title">
-            <code class="code-title">Gitコマンド</code>
-        </div>
-        <div class="code-text">
-            <code class="code-row">1.|</code><code>$ git push //ローカルリポジトリの内容をリモートリポジトリに統合</code><br>
-        </div>
-
         <hr>
 
     </div>
